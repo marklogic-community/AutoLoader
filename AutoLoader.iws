@@ -76,7 +76,7 @@
       <file leaf-file-name="AutoLoader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/marklogic/autoloader/AutoLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="35" selection-end="369" vertical-scroll-proportion="0.0">
+            <state line="61" column="131" selection-start="1962" selection-end="2065" vertical-scroll-proportion="0.66863906">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recordLoaderConfig.properties" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="recordLoaderConfig.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/recordLoaderConfig.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="54" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
+            <state line="1" column="10" selection-start="61" selection-end="71" vertical-scroll-proportion="0.01183432">
               <folding />
             </state>
           </provider>
@@ -102,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordLoaderBridge.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RecordLoaderBridge.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/marklogic/autoloader/RecordLoaderBridge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="2" selection-start="369" selection-end="369" vertical-scroll-proportion="0.14201184">
+            <state line="12" column="2" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -552,22 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/recordLoaderConfig.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="54" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/marklogic/autoloader/AutoLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="35" selection-end="369" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/marklogic/autoloader/AutoLoaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="2" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
@@ -577,7 +561,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/marklogic/autoloader/RecordLoaderBridge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="2" selection-start="369" selection-end="369" vertical-scroll-proportion="0.14201184">
+        <state line="12" column="2" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/marklogic/autoloader/AutoLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="131" selection-start="1962" selection-end="2065" vertical-scroll-proportion="0.66863906">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/recordLoaderConfig.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="10" selection-start="61" selection-end="71" vertical-scroll-proportion="0.01183432">
           <folding />
         </state>
       </provider>
