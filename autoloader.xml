@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="autoloader" default="all">
+  
+  
+  <property file="autoloader.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.sbas/**"/>
+    <exclude name="**/.IJI.*/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.6" value="${jdk.home.1.6}/bin"/>
+  <path id="jdk.classpath.1.6">
+    <fileset dir="${jdk.home.1.6}">
+      <include name="../../1.6/Home/lib/deploy.jar"/>
+      <include name="../../1.6/Home/lib/dt.jar"/>
+      <include name="../../1.6/Home/lib/javaws.jar"/>
+      <include name="../../1.6/Home/lib/jce.jar"/>
+      <include name="../../1.6/Home/lib/management-agent.jar"/>
+      <include name="../../1.6/Home/lib/plugin.jar"/>
+      <include name="../../1.6/Home/lib/sa-jdi.jar"/>
+      <include name="../../1.6/Home/../Classes/charsets.jar"/>
+      <include name="../../1.6/Home/../Classes/classes.jar"/>
+      <include name="../../1.6/Home/../Classes/dt.jar"/>
+      <include name="../../1.6/Home/../Classes/jce.jar"/>
+      <include name="../../1.6/Home/../Classes/jconsole.jar"/>
+      <include name="../../1.6/Home/../Classes/jsse.jar"/>
+      <include name="../../1.6/Home/../Classes/laf.jar"/>
+      <include name="../../1.6/Home/../Classes/management-agent.jar"/>
+      <include name="../../1.6/Home/../Classes/ui.jar"/>
+      <include name="../../1.6/Home/lib/ext/apple_provider.jar"/>
+      <include name="../../1.6/Home/lib/ext/dnsns.jar"/>
+      <include name="../../1.6/Home/lib/ext/localedata.jar"/>
+      <include name="../../1.6/Home/lib/ext/sunjce_provider.jar"/>
+      <include name="../../1.6/Home/lib/ext/sunpkcs11.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.6}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.6}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.6"/>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module AutoLoader -->
+  
+  <dirname property="module.autoloader.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.autoloader" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.autoloader" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.autoloader" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.autoloader" value="${compiler.args}"/>
+  
+  <property name="autoloader.output.dir" value="${module.autoloader.basedir}/out/production/AutoLoader"/>
+  <property name="autoloader.testoutput.dir" value="${module.autoloader.basedir}/out/test/AutoLoader"/>
+  
+  <path id="autoloader.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="autoloader.module.classpath">
+    <path refid="${module.jdk.classpath.autoloader}"/>
+    <pathelement location="${module.autoloader.basedir}/lib/testng-5.8-jdk15.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/clopt.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/jmxri.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/org.sadun.util.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/pollmgt.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/xcc.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/RecordLoaderMod.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/xpp3-1.1.4.jar"/>
+  </path>
+  
+  <path id="autoloader.runtime.module.classpath">
+    <path refid="${module.jdk.classpath.autoloader}"/>
+    <pathelement location="${autoloader.output.dir}"/>
+    <pathelement location="${autoloader.testoutput.dir}"/>
+    <pathelement location="${module.autoloader.basedir}/lib/testng-5.8-jdk15.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/clopt.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/jmxri.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/org.sadun.util.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/pollmgt.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/xcc.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/RecordLoaderMod.jar"/>
+    <pathelement location="${module.autoloader.basedir}/lib/xpp3-1.1.4.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.autoloader">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.autoloader">
+    <patternset refid="excluded.from.module.autoloader"/>
+  </patternset>
+  
+  <path id="autoloader.module.sourcepath">
+    <dirset dir="${module.autoloader.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  <path id="autoloader.module.test.sourcepath">
+    <dirset dir="${module.autoloader.basedir}">
+      <include name="test"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.autoloader" depends="compile.module.autoloader.production,compile.module.autoloader.tests" description="Compile module AutoLoader"/>
+  
+  <target name="compile.module.autoloader.production" description="Compile module AutoLoader; production classes">
+    <mkdir dir="${autoloader.output.dir}"/>
+    <javac destdir="${autoloader.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.autoloader}/javac">
+      <compilerarg line="${compiler.args.autoloader}"/>
+      <bootclasspath refid="autoloader.module.bootclasspath"/>
+      <classpath refid="autoloader.module.classpath"/>
+      <src refid="autoloader.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.autoloader"/>
+    </javac>
+    
+    <copy todir="${autoloader.output.dir}">
+      <fileset dir="${module.autoloader.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.autoloader.tests" depends="compile.module.autoloader.production" description="compile module AutoLoader; test classes" unless="skip.tests">
+    <mkdir dir="${autoloader.testoutput.dir}"/>
+    <javac destdir="${autoloader.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.autoloader}/javac">
+      <compilerarg line="${compiler.args.autoloader}"/>
+      <classpath refid="autoloader.module.classpath"/>
+      <classpath location="${autoloader.output.dir}"/>
+      <src refid="autoloader.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.autoloader"/>
+    </javac>
+    
+    <copy todir="${autoloader.testoutput.dir}">
+      <fileset dir="${module.autoloader.basedir}/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.autoloader" description="cleanup module">
+    <delete dir="${autoloader.output.dir}"/>
+    <delete dir="${autoloader.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.autoloader" description="cleanup all"/>
+  
+  <target name="all" depends="init, clean, compile.module.autoloader" description="build all"/>
+</project>
