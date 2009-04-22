@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module relativePaths="true" type="JAVA_MODULE" version="4">
   <component name="BuildJarSettings">
-    <containerInfo />
+    <containerInfo>
+      <containerElement type="module" name="AutoLoader">
+        <attribute name="method" value="1" />
+        <attribute name="URI" value="/" />
+      </containerElement>
+      <containerElement type="library" name="JPoller" level="module">
+        <attribute name="method" value="2" />
+        <attribute name="URI" value="/" />
+      </containerElement>
+      <containerElement type="library" name="RecordLoader" level="module">
+        <attribute name="method" value="2" />
+        <attribute name="URI" value="/" />
+      </containerElement>
+    </containerInfo>
     <setting name="jarUrl" value="file://$MODULE_DIR$/../releases/AutoLoader-1.0.jar" />
     <setting name="buildJar" value="true" />
-    <setting name="mainClass" value="" />
+    <setting name="mainClass" value="com.marklogic.autoloader.AutoLoader" />
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
