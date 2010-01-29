@@ -70,6 +70,7 @@ public class AutoLoader {
         poller = new DirectoryPoller(pollingDirectory);
         poller.setAutoMoveDirectory(pollingDirectory, completedDirectory);
         poller.setAutoMove(true);
+        poller.setBypassLockedFiles(true);
         poller.addPollManager(new RecordLoaderBridge(configFileName));
         // we need a shutdown hook to ensure that the loader is properly shutdown
         Runtime.getRuntime().addShutdownHook(new Thread() {
